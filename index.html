@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Junior Web Developer Exercise</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #ffffff;
+      }
+      .container {
+        text-align: center;
+        background: #ffffff;
+        padding: 20px;
+        padding-top: 5px;
+        padding-right: 35px;
+        padding-bottom: 35px;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+      }
+      .container h1 {
+        font-family: "Ascender", serif; /* The only available style I found for free that is similar to Ascender Serif WGL Regular from MyFonts. */
+        margin-bottom: 24px;
+        color: #5380d9;
+        text-align: left;
+        font-size: 32px;
+        font-weight: 100;
+      }
+      .input-container h4 {
+        font-family: "Ascender", serif;
+        font-weight: 100;
+        text-align: left;
+        font-size: 17px;
+        margin: 0 0 5px 0;
+      }
+      .input-container {
+        margin-bottom: 15px;
+        margin-top: 1px;
+      }
+      input {
+        padding: 4px;
+        padding-right: 60px;
+        width: 200px;
+        font-size: 13px;
+        border: 1px solid #ccc;
+        border-radius: 7px;
+      }
+      input::placeholder {
+        color: #858484;
+      }
+      .error-message {
+        color: red;
+        font-size: 14px;
+        margin-top: 10px;
+      }
+      button {
+        border-radius: 8px;
+        padding: 2px;
+        padding-left: 9px;
+        padding-right: 9px;
+        color: #5380d9;
+        background-color: #ffffff;
+        border: 2px solid #5380d9;
+        font-weight: 600;
+        font-size: 15px;
+        float: right;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Form</h1>
+      <div class="input-container">
+        <h4>Number</h4>
+        <input
+          type="number"
+          id="numberInput"
+          placeholder="Please enter a number"
+        />
+        <p class="error-message" id="errorMessage" style="display: none">
+          Please enter a number greater than 10.
+        </p>
+      </div>
+      <button onclick="validateInput()">Submit</button>
+    </div>
+
+    <script>
+      function validateInput() {
+        // Retrieve the input element where the user enters the number
+        const input = document.getElementById("numberInput");
+        // Get the error message paragraph element
+        const errorMessage = document.getElementById("errorMessage");
+
+        // Convert the input value to a number and check if it is greater than 10
+        if (Number(input.value) > 10) {
+          // If the input is valid, hide the error message
+          errorMessage.style.display = "none";
+
+          // Show an alert to confirm the valid input value
+          alert("Valid number submitted: " + input.value);
+        } else {
+          // If the input is invalid, display the error message
+          errorMessage.style.display = "block";
+        }
+      }
+    </script>
+  </body>
+</html>
